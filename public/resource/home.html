@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
+    <title>Park app</title>
+    <link rel="stylesheet" href="https://unpkg.com/tachyons@4.9.1/css/tachyons.min.css"/>
+    <link rel="stylesheet" href="style.css"/>
+    <link href="https://fonts.googleapis.com/css?family=Changa" rel="stylesheet">
+  </head>
+  <body class="changa w-90-ns center">
+  <!--lower navbar-->
+    <nav class="navbar1 h2 flex justify-between w-100 bg-park-blue bb b--white changa f4 h3-ns">
+      <div class="w-50 pt1 tc pt22-ns">
+        <a href="#home" class="white no-underline f2-ns">National Park</a>
+      </div>
+      <form class="form w-50 pa0 bg-white" action="TBC">
+        <input class="w-80 ma0 h2 mh0 f5 h3-ns bn pl3" type="text" placeholder="Search">
+        <button class="button w-20 ma0 h2 bg-white bn h3-ns" type="submit">
+          <i class="fas fa-search pointer pt1 bn"></i>
+        </button>
+      </form>
+    </nav>
+
+    <nav class="navbar2 h2 flex justify-between w-100 bg-park-blue changa f4 h3-ns f2-ns">
+      <div class="w-30 pt1 tc pt22-ns">
+      <a href="#home" class="white no-underline">MAP</a>
+      </div>
+
+      <div class="showby w-40 bl br b--white tc z-0 pt2-ns">
+        <button class="dropbtn white bg-park-blue changa pt1 bn">FILTER</button>
+        <div class="dropdown-content dn flex-column tl"> <!--have to add "flex" when to show"-->
+          <a href="#" class="black no-underline mt1 pa1 ba b--black-20 pl3 bg-white">waterfall</a>
+          <a href="#" class="black no-underline pa1 bl br bb b--black-20 pl3 bg-white">BBQ</a>
+          <a href="#" class="black no-underline pa1 bl br bb b--black-20 pl3 bg-white">campsite</a>
+          <a href="#" class="black no-underline pa1 bl br bb b--black-20 pl3 bg-white">playground</a>
+          <a href="#" class="black no-underline pa1 bl br bb b--black-20 pl3 bg-white">free entrance</a>
+          <a href="#" class="black no-underline pa1 bl br bb b--black-20 pl3 bg-white">bike trail</a>
+          <a href="#" class="black no-underline pa1 bl br bb b--black-20 pl3 bg-white">elderly-friendly</a>
+        </div>
+      </div>
+
+      <div class="filter w-30 tc z-0 pt2-ns">
+        <button class="dropbtn white bg-park-blue changa pt1 bn">SHOW BY</button>
+        <div class="dropdown-content dn flex-column tc"> <!--have to add "flex" when to show"-->
+          <a href="#" class="black no-underline mt1 pa1 ba b--black-20 bg-white">distance</a>
+          <a href="#" class="black no-underline ma0 pa1 bl br bb b--black-20 bg-white">rating</a>
+          <a href="#" class="black no-underline ma0 pa1 bl br bb b--black-20 bg-white">views</a>
+        </div>
+      </div>
+    </nav>
+
+
+    <section class="park_container flex flex-column items-center z-0 w-100 flex-row-ns justify-center-ns">
+      <div class="first_park bg-light-gray w-80 h5 mt4 br2 w-40-ns vh-40-ns mr5-ns">
+        <p class="tc ma3 f3 b f2-l">Haifa National Park</p>
+        <div class="tag_container flex justify-between mh3">
+          <div class="tag1 br2 bg-tag-green white w3 tc f3-ns w4-ns">#lake</div>
+          <div class="tag2 br2 bg-tag-green white w4 tc f3-ns w5-ns">#playground</div>
+          <div class="tag3 br2 bg-tag-green white w3 tc f3-ns w4-ns">#free</div>
+        </div>
+        <div class="image w-70 mt3 center">
+          <img class="" src="https://res.cloudinary.com/simpleview/image/upload/crm/kelowna/Kinsmen-Park-Benches-40ad334c5056a36_40ad3bce-5056-a36a-0b358f00dbd24259.jpg" alt="park1">
+        </div>
+      </div>
+      <div class="second_park bg-light-gray w-80 h5 mt4 br2 w-40-ns vh-40-ns">
+        <p class="tc ma3 f3 b f2-l">Carmel National Park</p>
+        <div class="tag_container flex justify-between mh3">
+          <div class="tag1 br2 bg-tag-green white w3 tc f3-ns w4-ns">#lake</div>
+          <div class="tag2 br2 bg-tag-green white w4 tc f3-ns w5-ns">#playground</div>
+          <div class="tag3 br2 bg-tag-green white w3 tc f3-ns w4-ns">#free</div>
+        </div>
+        <div class="image w-70 mt3 center">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpozQNfVLvyINjTlbJDpx0XcpVup5eMw4-Xt2LCnqFFbsP1dyg" alt="park1">
+        </div>
+      </div>
+    </section>
+
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js">
+      </script>
+  </body>
+</html>
