@@ -17,5 +17,5 @@ app.use('/api', router);
 app.use("*", express.static("./build/"));
 
 app.listen(port, () => {
-  console.log(`running on prot http://localhost:${port}`);
+  console.log(`running on port http://localhost:${port}`);
 });

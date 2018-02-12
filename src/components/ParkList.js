@@ -30,7 +30,7 @@ class ParkList extends React.Component {
       );
   }
 
-  getingParks = () => {
+  gettingParks = () => {
     const { error, isLoaded, parks } = this.state;
     if (error) {
       return <div>Error: {error.message}</div>;
@@ -48,7 +48,7 @@ class ParkList extends React.Component {
   };
 
   render() {
-    return <div>{this.getingParks()}</div>;
+    return <div>{this.gettingParks()}</div>;
   }
 }
 
