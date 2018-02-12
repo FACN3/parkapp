@@ -1,4 +1,5 @@
 import React from 'react';
+import SingleParkFromList from './SingleParkFromList';
 
 class ParkList extends React.Component {
   constructor(props) {
@@ -29,7 +30,7 @@ class ParkList extends React.Component {
       );
   }
 
-  getingParks = () => {
+  gettingParks = () => {
     const { error, isLoaded, parks } = this.state;
     if (error) {
       return <div>Error: {error.message}</div>;
@@ -37,13 +38,17 @@ class ParkList extends React.Component {
       return <div>Loading...</div>;
     } else {
       return (
-        <ul>{parks.map(item => <li key={item.parkId}>{item.parkDesc}</li>)}</ul>
+        <section>
+          {parks.map(park => (
+            <SingleParkFromList key={park.parkId} park={park} />
+          ))}
+        </section>
       );
     }
   };
 
   render() {
-    return <div>{this.getingParks()}</div>;
+    return <div>{this.gettingParks()}</div>;
   }
 }
 
