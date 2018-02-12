@@ -21,7 +21,7 @@ const routes = () => {
         picturesUrl: { small: ['fakeUrl', 'fakeUrl'], big: 'fakeUrl' }
       },
       {
-        parkId: 1,
+        parkId: 2,
         parkName: 'shahne',
         parkDesc: 'a big park',
         parkCoordinates: { lat: 100, lang: 100 },
@@ -31,7 +31,7 @@ const routes = () => {
         picturesUrl: { small: ['fakeUrl', 'fakeUrl'], big: 'fakeUrl' }
       },
       {
-        parkId: 1,
+        parkId: 3,
         parkName: 'shahne',
         parkDesc: 'a big park',
         parkCoordinates: { lat: 100, lang: 100 },
@@ -41,7 +41,7 @@ const routes = () => {
         picturesUrl: { small: ['fakeUrl', 'fakeUrl'], big: 'fakeUrl' }
       },
       {
-        parkId: 1,
+        parkId: 4,
         parkName: 'shahne',
         parkDesc: 'a big park',
         parkCoordinates: { lat: 100, lang: 100 },
@@ -51,7 +51,7 @@ const routes = () => {
         picturesUrl: { small: ['fakeUrl', 'fakeUrl'], big: 'fakeUrl' }
       },
       {
-        parkId: 1,
+        parkId: 5,
         parkName: 'shahne',
         parkDesc: 'a big park',
         parkCoordinates: { lat: 100, lang: 100 },
