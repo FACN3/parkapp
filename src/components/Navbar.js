@@ -106,7 +106,7 @@ const Navbar = () => {
         </div>
       </nav>
 
-      <nav className="navbar3 h2 w-100 bg-park-blue bt bb b--white changa h3-ns">
+      <nav className="navbar3 h2 w-100 bg-park-blue bt bb b--white changa h3-ns dn">
         <div className="w-100 tc pl3 h2 tl-ns v-mid flex items-center pt4-ns">
           <i className="fas fa-chevron-left white f6 fl f4-ns " />
           <a href="#home" className="white no-underline f5 fl pl2 f3-ns">
