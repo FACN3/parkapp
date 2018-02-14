@@ -1,6 +1,6 @@
 import { Map, InfoWindow, Marker, GoogleApiWrapper } from 'google-maps-react';
 import React, { Component } from 'react';
-//require('env2')('config.env');
+require('env2')('.env');
 
 export class MapContainer extends Component {
   render() {
