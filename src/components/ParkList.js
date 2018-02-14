@@ -51,7 +51,7 @@ class ParkList extends React.Component {
   render() {
     return (
       <div>
-        <Navbar />
+        <Navbar location={this.props.location.pathname} />
         {this.gettingParks()}
       </div>
     );

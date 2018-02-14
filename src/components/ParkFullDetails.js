@@ -100,7 +100,7 @@ class ParkFullDetails extends Component {
   render() {
     return (
       <div className="FullDetails">
-        <Navbar />
+        <Navbar location={this.props.location.pathname} />
         {this.gettingFullDetails()}
       </div>
     );
