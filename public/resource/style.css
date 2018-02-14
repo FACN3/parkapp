@@ -16,6 +16,18 @@
   margin-top: -0.15rem;
 }
 
+.grid {
+  display: grid;
+}
+
+.max-height-45 {
+  max-height: 45vh;
+}
+
+.rating {
+  float: left;
+}
+
 @media screen and (min-width: 30em) {
   .pt22-ns {
     padding-top: 0.7rem;

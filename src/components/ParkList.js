@@ -1,5 +1,6 @@
 import React from 'react';
 import SingleParkFromList from './SingleParkFromList';
+import Navbar from './Navbar';
 
 class ParkList extends React.Component {
   constructor(props) {
@@ -48,7 +49,12 @@ class ParkList extends React.Component {
   };
 
   render() {
-    return <div>{this.gettingParks()}</div>;
+    return (
+      <div>
+        <Navbar />
+        {this.gettingParks()}
+      </div>
+    );
   }
 }
 
