@@ -135,12 +135,12 @@ class Navbar extends React.Component {
                   : 'dn dropdown-content flex-column tc'
               }
             >
-              <a
-                href=""
+              <button
                 className="black no-underline mt1 pa1 ba b--black-20 bg-white"
-              >
+              onClick={this.props.changeFilter}
+                >
                 distance
-              </a>
+              </button>
               <a
                 href=""
                 className="black no-underline ma0 pa1 bl br bb b--black-20 bg-white"

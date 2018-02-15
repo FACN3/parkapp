@@ -8,8 +8,16 @@ class ParkList extends React.Component {
     this.state = {
       error: null,
       isLoaded: false,
-      parks: []
+      parks: [],
+      filter : ''
     };
+  }
+
+  changeFilter (filterType) {
+    console.log('foo')
+    // this.setState({
+    //   fiter : filterType
+    // })
   }
 
   componentDidMount() {
@@ -51,7 +59,7 @@ class ParkList extends React.Component {
   render() {
     return (
       <div>
-        <Navbar location={this.props.location.pathname} />
+        <Navbar filter={this.changeFilter} location={this.props.location.pathname} />
         {this.gettingParks()}
       </div>
     );

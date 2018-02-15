@@ -15,7 +15,7 @@ const routes = () => {
         parkName: 'shahne',
         parkDesc: 'a big park',
         parkCoordinates: { lat: 100, lang: 100 },
-        raiting: 3,
+        raiting: 1,
         wazeLink: 'fake Waze link',
         tags: ['tag1', 'tag2', 'tag3'],
         picturesUrl: { small: ['fakeUrl', 'fakeUrl'], big: 'fakeUrl' }
@@ -25,7 +25,7 @@ const routes = () => {
         parkName: 'shahne',
         parkDesc: 'a big park',
         parkCoordinates: { lat: 100, lang: 100 },
-        raiting: 3,
+        raiting: 2,
         wazeLink: 'fake Waze link',
         tags: ['tag1', 'tag2', 'tag3'],
         picturesUrl: { small: ['fakeUrl', 'fakeUrl'], big: 'fakeUrl' }
@@ -45,7 +45,7 @@ const routes = () => {
         parkName: 'shahne',
         parkDesc: 'a big park',
         parkCoordinates: { lat: 100, lang: 100 },
-        raiting: 3,
+        raiting: 4,
         wazeLink: 'fake Waze link',
         tags: ['tag1', 'tag2', 'tag3'],
         picturesUrl: { small: ['fakeUrl', 'fakeUrl'], big: 'fakeUrl' }
@@ -55,7 +55,7 @@ const routes = () => {
         parkName: 'shahne',
         parkDesc: 'a big park',
         parkCoordinates: { lat: 100, lang: 100 },
-        raiting: 3,
+        raiting: 5,
         wazeLink: 'fake Waze link',
         tags: ['tag1', 'tag2', 'tag3'],
         picturesUrl: { small: ['fakeUrl', 'fakeUrl'], big: 'fakeUrl' }
