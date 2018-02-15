@@ -107,18 +107,4 @@ class ParkFullDetails extends Component {
   }
 }
 
-{
-  /* <div>
-  <h1 className="tc">{park.parkName}</h1>
-  <h3>Rating: {park.raiting}</h3>
-</div> */
-  {
-    /* <section className="tag_container justify-between mh3 ma1">
-  <span className="tag1 br2 bg-park-blue white w3 tc">#lake</span>
-  <span className="tag1 br2 bg-park-blue white w3 tc">#lake</span>
-  <span className="tag1 br2 bg-park-blue white w3 tc">#lake</span>
-</section> */
-  }
-}
-
 export default ParkFullDetails;
