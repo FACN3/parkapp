@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const path = require('path');
+const Park = require('./db/models/Park');
 
 const port = process.env.PORT || 6060;
 const host = process.env.HOST || 'localhost';
@@ -12,7 +13,7 @@ app.use(bodyParser.json());
 const morgan = require('morgan');
 app.use(morgan('dev'));
 
-const router = require('./router')();
+const router = require('./router')(app, Park);
 
 app.use('/api', router);
 

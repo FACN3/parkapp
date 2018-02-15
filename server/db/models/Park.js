@@ -1,14 +1,15 @@
 require('../db_connections')();
 const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
 
-const CityParkSchema = mongoose.Schema({
+const ParkSchema = new Schema({
   parkName: String,
   parkDesc: String,
   parkCoordinates: { lat: Number, lang: Number },
-  raiting: Number,
+  rating: Number,
   wazeLink: String,
   tags: Array,
   picturesUrl: { small: Array, big: String }
 });
 
-module.exports = mongoose.model('CityPark', CityParkSchema);
+module.exports = mongoose.model('Park', ParkSchema);
