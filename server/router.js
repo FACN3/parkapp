@@ -12,7 +12,7 @@ const routes = () => {
     res.json([
       {
         parkId: 1,
-        parkName: 'shahne',
+        parkName: 'shahne1',
         parkDesc: 'a big park',
         parkCoordinates: { lat: 100, lang: 100 },
         raiting: 1,
@@ -22,7 +22,7 @@ const routes = () => {
       },
       {
         parkId: 2,
-        parkName: 'shahne',
+        parkName: 'shahne2',
         parkDesc: 'a big park',
         parkCoordinates: { lat: 100, lang: 100 },
         raiting: 2,
@@ -32,7 +32,7 @@ const routes = () => {
       },
       {
         parkId: 3,
-        parkName: 'shahne',
+        parkName: 'shahne3',
         parkDesc: 'a big park',
         parkCoordinates: { lat: 100, lang: 100 },
         raiting: 3,
@@ -42,7 +42,7 @@ const routes = () => {
       },
       {
         parkId: 4,
-        parkName: 'shahne',
+        parkName: 'shahne4',
         parkDesc: 'a big park',
         parkCoordinates: { lat: 100, lang: 100 },
         raiting: 4,
@@ -52,7 +52,7 @@ const routes = () => {
       },
       {
         parkId: 5,
-        parkName: 'shahne',
+        parkName: 'shahne5',
         parkDesc: 'a big park',
         parkCoordinates: { lat: 100, lang: 100 },
         raiting: 5,

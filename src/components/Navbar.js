@@ -137,7 +137,7 @@ class Navbar extends React.Component {
             >
               <button
                 className="black no-underline mt1 pa1 ba b--black-20 bg-white"
-              onClick={this.props.changeFilter}
+              onClick={() => this.props.changeFilter('distance')}
                 >
                 distance
               </button>

@@ -8,17 +8,16 @@ class ParkList extends React.Component {
     this.state = {
       error: null,
       isLoaded: false,
-      parks: [],
-      filter : ''
+      parks: []
     };
   }
 
-  changeFilter (filterType) {
-    console.log('foo')
-    // this.setState({
-    //   fiter : filterType
-    // })
-  }
+  changeFilter = filterType => {
+    debugger;
+    let parksCopy = this.state.parks.slice();
+    parksCopy.sort((a,b) => { return  b - a});
+    this.setState({ parks : parksCopy})
+  };
 
   componentDidMount() {
     fetch('http://localhost:6060/api/allparks')
@@ -59,7 +58,10 @@ class ParkList extends React.Component {
   render() {
     return (
       <div>
-        <Navbar filter={this.changeFilter} location={this.props.location.pathname} />
+        <Navbar
+          changeFilter={this.changeFilter}
+          location={this.props.location.pathname}
+        />
         {this.gettingParks()}
       </div>
     );
