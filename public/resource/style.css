@@ -10,10 +10,21 @@
 .button {
   margin-left: -0.27rem;
   margin-right: -0.901rem;
-  /* padding-bottom: 2rem; */
 }
 .form {
   margin-top: -0.15rem;
+}
+
+.grid {
+  display: grid;
+}
+
+.max-height-45 {
+  max-height: 45vh;
+}
+
+.rating {
+  float: left;
 }
 
 @media screen and (min-width: 30em) {

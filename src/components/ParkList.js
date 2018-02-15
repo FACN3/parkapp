@@ -1,4 +1,6 @@
 import React from 'react';
+import SingleParkFromList from './SingleParkFromList';
+import Navbar from './Navbar';
 
 class ParkList extends React.Component {
   constructor(props) {
@@ -6,7 +8,7 @@ class ParkList extends React.Component {
     this.state = {
       error: null,
       isLoaded: false,
-      items: []
+      parks: []
     };
   }
 
@@ -17,7 +19,7 @@ class ParkList extends React.Component {
         result => {
           this.setState({
             isLoaded: true,
-            items: result
+            parks: result
           });
         },
         error => {
@@ -29,23 +31,30 @@ class ParkList extends React.Component {
       );
   }
 
-  render() {
-    const { error, isLoaded, items } = this.state;
+  gettingParks = () => {
+    const { error, isLoaded, parks } = this.state;
     if (error) {
       return <div>Error: {error.message}</div>;
     } else if (!isLoaded) {
       return <div>Loading...</div>;
     } else {
-      <ul>
-        {
-          items.map(item =>(
-        <li key={item.name}>
-            {item.name} {item.price}
-          </li>
-        ))
-      }
-      </ul>;
+      return (
+        <section>
+          {parks.map(park => (
+            <SingleParkFromList key={park.parkId} park={park} />
+          ))}
+        </section>
+      );
     }
+  };
+
+  render() {
+    return (
+      <div>
+        <Navbar location={this.props.location.pathname} />
+        {this.gettingParks()}
+      </div>
+    );
   }
 }
 
