@@ -17,7 +17,7 @@ class ParkFullDetails extends Component {
   }
 
   componentDidMount() {
-    fetch('http://localhost:6060/api/singlePark')
+    fetch('/api/singlePark')
       .then(res => res.json())
       .then(
         result => {
