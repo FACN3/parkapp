@@ -136,23 +136,23 @@ class Navbar extends React.Component {
               }
             >
               <button
+                onClick={() => this.props.changeFilter('distance')}
                 className="black no-underline mt1 pa1 ba b--black-20 bg-white"
-              onClick={() => this.props.changeFilter('distance')}
-                >
+              >
                 distance
               </button>
-              <a
-                href=""
+              <button
+                onClick={() => this.props.changeFilter('rating')}
                 className="black no-underline ma0 pa1 bl br bb b--black-20 bg-white"
               >
                 rating
-              </a>
-              <a
-                href=""
+              </button>
+              <button
+                onClick={() => this.props.changeFilter('views')}
                 className="black no-underline ma0 pa1 bl br bb b--black-20 bg-white"
               >
                 views
-              </a>
+              </button>
             </div>
           </div>
         </nav>

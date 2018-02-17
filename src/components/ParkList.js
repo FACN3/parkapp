@@ -13,10 +13,32 @@ class ParkList extends React.Component {
   }
 
   changeFilter = filterType => {
-    debugger;
     let parksCopy = this.state.parks.slice();
-    parksCopy.sort((a,b) => { return  b - a});
-    this.setState({ parks : parksCopy})
+    switch (filterType) {
+      case 'rating':
+        parksCopy.sort((a, b) => {
+          return b.rating - a.rating;
+        });
+        this.setState({ parks: parksCopy });
+        break;
+      case 'views':
+        parksCopy.sort((a, b) => {
+          return b.views - a.views;
+        });
+        this.setState({ parks: parksCopy });
+        break;
+      case 'distance':
+        parksCopy.sort((a, b) => {
+          return (
+            a.parkCoordinates.lat -
+            b.parkCoordinates.lat +
+            a.parkCoordinates.lang -
+            b.parkCoordinates.lang
+          );
+        });
+        this.setState({ parks: parksCopy });
+        break;
+    }
   };
 
   componentDidMount() {
