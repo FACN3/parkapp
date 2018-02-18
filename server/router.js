@@ -1,4 +1,5 @@
 const express = require('express');
+require('./db/db_connections')();
 
 const routes = () => {
   let router = express.Router();
