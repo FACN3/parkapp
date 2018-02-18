@@ -34,7 +34,7 @@ const routes = (app, Park) => {
     park.parkDesc = req.body.parkDesc;
     park.parkCoordinates = {
       lat: req.body.parkCoordinates.lat,
-      lang: req.body.parkCoordinates.lang
+      long: req.body.parkCoordinates.long
     };
     park.rating = req.body.rating;
     park.views = req.body.views;
@@ -87,7 +87,7 @@ const routes = (app, Park) => {
         parkId: 1,
         parkName: 'shahne',
         parkDesc: 'a big park',
-        parkCoordinates: { lat: 100, lang: 100 },
+        parkCoordinates: { lat: 100, long: 100 },
         raiting: 3,
         wazeLink: 'fake Waze link',
         tags: ['tag1', 'tag2', 'tag3'],
@@ -97,7 +97,7 @@ const routes = (app, Park) => {
         parkId: 2,
         parkName: 'shahne',
         parkDesc: 'a big park',
-        parkCoordinates: { lat: 100, lang: 100 },
+        parkCoordinates: { lat: 100, long: 100 },
         raiting: 3,
         wazeLink: 'fake Waze link',
         tags: ['tag1', 'tag2', 'tag3'],
@@ -107,7 +107,7 @@ const routes = (app, Park) => {
         parkId: 3,
         parkName: 'shahne',
         parkDesc: 'a big park',
-        parkCoordinates: { lat: 100, lang: 100 },
+        parkCoordinates: { lat: 100, long: 100 },
         raiting: 3,
         wazeLink: 'fake Waze link',
         tags: ['tag1', 'tag2', 'tag3'],
@@ -117,7 +117,7 @@ const routes = (app, Park) => {
         parkId: 4,
         parkName: 'shahne',
         parkDesc: 'a big park',
-        parkCoordinates: { lat: 100, lang: 100 },
+        parkCoordinates: { lat: 100, long: 100 },
         raiting: 3,
         wazeLink: 'fake Waze link',
         tags: ['tag1', 'tag2', 'tag3'],
@@ -127,7 +127,7 @@ const routes = (app, Park) => {
         parkId: 5,
         parkName: 'shahne',
         parkDesc: 'a big park',
-        parkCoordinates: { lat: 100, lang: 100 },
+        parkCoordinates: { lat: 100, long: 100 },
         raiting: 3,
         wazeLink: 'fake Waze link',
         tags: ['tag1', 'tag2', 'tag3'],
@@ -146,7 +146,7 @@ const routes = (app, Park) => {
       parkId: 1,
       parkName: 'shahne',
       parkDesc: 'a big park',
-      parkCoordinates: { lat: 100, lang: 100 },
+      parkCoordinates: { lat: 100, long: 100 },
       raiting: 3,
       wazeLink: 'fake Waze link',
       tags: ['tag1', 'tag2', 'tag3'],
