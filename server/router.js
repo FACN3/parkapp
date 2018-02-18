@@ -37,8 +37,8 @@ const routes = (app, Park) => {
       lang: req.body.parkCoordinates.lang
     };
     park.rating = req.body.rating;
-    park.wazeLink = req.body.wazeLink;
-    park.tags = [req.body.tags[0], req.body.tags[1], req.body.tags[2]];
+    park.views = req.body.views;
+    park.tags = req.body.tags;
     park.picturesUrl = {
       small: [req.body.picturesUrl.small[0], req.body.picturesUrl.small[1]],
       big: req.body.picturesUrl.big
@@ -47,7 +47,7 @@ const routes = (app, Park) => {
     park.save(err => {
       if (err) {
         console.log('this is error!', err);
-        res.json({ result: 0 });
+        res.status(500).json({ result: 0 });
         return;
       }
       res.json({ result: 1 });
