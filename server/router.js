@@ -13,53 +13,58 @@ const routes = () => {
     res.json([
       {
         parkId: 1,
-        parkName: 'shahne',
+        parkName: 'shahne1',
         parkDesc: 'a big park',
-        parkCoordinates: { lat: 100, lang: 100 },
-        raiting: 3,
+        parkCoordinates: { lat: 100, long: 100 },
+        rating: 1,
         wazeLink: 'fake Waze link',
         tags: ['tag1', 'tag2', 'tag3'],
-        picturesUrl: { small: ['fakeUrl', 'fakeUrl'], big: 'fakeUrl' }
+        picturesUrl: { small: ['fakeUrl', 'fakeUrl'], big: 'fakeUrl' },
+        views : 5
       },
       {
         parkId: 2,
-        parkName: 'shahne',
+        parkName: 'shahne2',
         parkDesc: 'a big park',
-        parkCoordinates: { lat: 100, lang: 100 },
-        raiting: 3,
+        parkCoordinates: { lat: 102, long: 102 },
+        rating: 2,
         wazeLink: 'fake Waze link',
         tags: ['tag1', 'tag2', 'tag3'],
-        picturesUrl: { small: ['fakeUrl', 'fakeUrl'], big: 'fakeUrl' }
+        picturesUrl: { small: ['fakeUrl', 'fakeUrl'], big: 'fakeUrl' },
+        views : 4
       },
       {
         parkId: 3,
-        parkName: 'shahne',
+        parkName: 'shahne3',
         parkDesc: 'a big park',
-        parkCoordinates: { lat: 100, lang: 100 },
-        raiting: 3,
+        parkCoordinates: { lat: 101, long: 101 },
+        rating: 3,
         wazeLink: 'fake Waze link',
         tags: ['tag1', 'tag2', 'tag3'],
-        picturesUrl: { small: ['fakeUrl', 'fakeUrl'], big: 'fakeUrl' }
+        picturesUrl: { small: ['fakeUrl', 'fakeUrl'], big: 'fakeUrl' },
+        views : 3
       },
       {
         parkId: 4,
-        parkName: 'shahne',
+        parkName: 'shahne4',
         parkDesc: 'a big park',
-        parkCoordinates: { lat: 100, lang: 100 },
-        raiting: 3,
+        parkCoordinates: { lat: 103, long: 103 },
+        rating: 4,
         wazeLink: 'fake Waze link',
         tags: ['tag1', 'tag2', 'tag3'],
-        picturesUrl: { small: ['fakeUrl', 'fakeUrl'], big: 'fakeUrl' }
+        picturesUrl: { small: ['fakeUrl', 'fakeUrl'], big: 'fakeUrl' },
+        views : 2
       },
       {
         parkId: 5,
-        parkName: 'shahne',
+        parkName: 'shahne5',
         parkDesc: 'a big park',
-        parkCoordinates: { lat: 100, lang: 100 },
-        raiting: 3,
+        parkCoordinates: { lat: 104, long: 104 },
+        rating: 5,
         wazeLink: 'fake Waze link',
         tags: ['tag1', 'tag2', 'tag3'],
-        picturesUrl: { small: ['fakeUrl', 'fakeUrl'], big: 'fakeUrl' }
+        picturesUrl: { small: ['fakeUrl', 'fakeUrl'], big: 'fakeUrl' }, 
+        views : 1
       }
     ]);
   });
@@ -74,8 +79,8 @@ const routes = () => {
       parkId: 1,
       parkName: 'shahne',
       parkDesc: 'a big park',
-      parkCoordinates: { lat: 100, lang: 100 },
-      raiting: 3,
+      parkCoordinates: { lat: 100, long: 100 },
+      rating: 3,
       wazeLink: 'fake Waze link',
       tags: ['tag1', 'tag2', 'tag3'],
       picturesUrl: {
