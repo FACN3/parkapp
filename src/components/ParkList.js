@@ -12,6 +12,35 @@ class ParkList extends React.Component {
     };
   }
 
+  changeFilter = filterType => {
+    let parksCopy = this.state.parks.slice();
+    switch (filterType) {
+      case 'rating':
+        parksCopy.sort((a, b) => {
+          return b.rating - a.rating;
+        });
+        this.setState({ parks: parksCopy });
+        break;
+      case 'views':
+        parksCopy.sort((a, b) => {
+          return b.views - a.views;
+        });
+        this.setState({ parks: parksCopy });
+        break;
+      case 'distance':
+        parksCopy.sort((a, b) => {
+          return (
+            a.parkCoordinates.lat -
+            b.parkCoordinates.lat +
+            a.parkCoordinates.lang -
+            b.parkCoordinates.lang
+          );
+        });
+        this.setState({ parks: parksCopy });
+        break;
+    }
+  };
+
   componentDidMount() {
     fetch('http://localhost:6060/api/allparks')
       .then(res => res.json())
@@ -51,7 +80,10 @@ class ParkList extends React.Component {
   render() {
     return (
       <div>
-        <Navbar location={this.props.location.pathname} />
+        <Navbar
+          changeFilter={this.changeFilter}
+          location={this.props.location.pathname}
+        />
         {this.gettingParks()}
       </div>
     );
