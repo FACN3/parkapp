@@ -31,7 +31,7 @@ export class MapComponent extends Component {
   render() {
     return (
       <div>
-        <Navbar location={this.props.location.pathname}  />
+        <Navbar location={this.props.location.pathname} />
         <Map
           google={this.props.google}
           onClick={this.onMapClicked}
