@@ -27,6 +27,19 @@ const routes = (app, Park) => {
       res.json(Park);
     });
   });
+  //GET PARK BY CITY
+  app.get('/api/parks/city/:city', (req, res) => {
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header(
+      'Access-Control-Allow-Headers',
+      'Origin, X-Requested-With, Content-Type, Accept'
+    );
+    Park.find({ city: req.params.city }, (err, Park) => {
+      if (err) return res.status(500).json({ error: err });
+      if (!Park) return res.status(404).json({ error: 'Park not found' });
+      res.json(Park);
+    });
+  });
   //CREATE PARK
   app.post('/api/parks', (req, res) => {
     const park = new Park();
@@ -38,6 +51,7 @@ const routes = (app, Park) => {
     };
     park.rating = req.body.rating;
     park.views = req.body.views;
+    park.city = req.body.city;
     park.tags = req.body.tags;
     park.picturesUrl = {
       small: [req.body.picturesUrl.small[0], req.body.picturesUrl.small[1]],
@@ -92,7 +106,7 @@ const routes = (app, Park) => {
         wazeLink: 'fake Waze link',
         tags: ['tag1', 'tag2', 'tag3'],
         picturesUrl: { small: ['fakeUrl', 'fakeUrl'], big: 'fakeUrl' },
-        views : 5
+        views: 5
       },
       {
         parkId: 2,
@@ -103,7 +117,7 @@ const routes = (app, Park) => {
         wazeLink: 'fake Waze link',
         tags: ['tag1', 'tag2', 'tag3'],
         picturesUrl: { small: ['fakeUrl', 'fakeUrl'], big: 'fakeUrl' },
-        views : 4
+        views: 4
       },
       {
         parkId: 3,
@@ -114,7 +128,7 @@ const routes = (app, Park) => {
         wazeLink: 'fake Waze link',
         tags: ['tag1', 'tag2', 'tag3'],
         picturesUrl: { small: ['fakeUrl', 'fakeUrl'], big: 'fakeUrl' },
-        views : 3
+        views: 3
       },
       {
         parkId: 4,
@@ -125,7 +139,7 @@ const routes = (app, Park) => {
         wazeLink: 'fake Waze link',
         tags: ['tag1', 'tag2', 'tag3'],
         picturesUrl: { small: ['fakeUrl', 'fakeUrl'], big: 'fakeUrl' },
-        views : 2
+        views: 2
       },
       {
         parkId: 5,
@@ -135,8 +149,8 @@ const routes = (app, Park) => {
         rating: 5,
         wazeLink: 'fake Waze link',
         tags: ['tag1', 'tag2', 'tag3'],
-        picturesUrl: { small: ['fakeUrl', 'fakeUrl'], big: 'fakeUrl' }, 
-        views : 1
+        picturesUrl: { small: ['fakeUrl', 'fakeUrl'], big: 'fakeUrl' },
+        views: 1
       }
     ]);
   });

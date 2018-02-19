@@ -10,6 +10,8 @@ class ParkList extends React.Component {
       isLoaded: false,
       parks: []
     };
+
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   changeFilter = filterType => {
@@ -42,7 +44,7 @@ class ParkList extends React.Component {
   };
 
   componentDidMount() {
-    fetch('http://localhost:6060/api/allparks')
+    fetch('http://localhost:6060/api/allParks')
       .then(res => res.json())
       .then(
         result => {
@@ -69,13 +71,25 @@ class ParkList extends React.Component {
     } else {
       return (
         <section>
-          {parks.map(park => (
-            <SingleParkFromList key={park.parkId} park={park} />
-          ))}
+          {parks.map((park, i) => <SingleParkFromList key={i} park={park} />)}
         </section>
       );
     }
   };
+
+  handleSubmit(e) {
+    e.preventDefault();
+    const query = e.target.searchInput.value;
+    // console.log(query);
+    fetch(`http://localhost:6060/api/parks/city/${query}`)
+      .then(res => res.json())
+      .then(result => {
+        this.setState({
+          isLoaded: true,
+          parks: result
+        });
+      });
+  }
 
   render() {
     return (
@@ -83,6 +97,7 @@ class ParkList extends React.Component {
         <Navbar
           changeFilter={this.changeFilter}
           location={this.props.location.pathname}
+          handleSubmit={this.handleSubmit}
         />
         {this.gettingParks()}
       </div>
