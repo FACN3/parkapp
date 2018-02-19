@@ -1,4 +1,4 @@
-import { Map, InfoWindow, Marker, GoogleApiWrapper } from 'google-maps-react';
+import { Map, InfoWindow, GoogleApiWrapper, Marker } from 'google-maps-react';
 import React, { Component } from 'react';
 import Navbar from './Navbar';
 
@@ -6,29 +6,27 @@ export class MapComponent extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      MarkersWithData: [],
       showingInfoWindow: false,
       activeMarker: {},
       selectedPlace: {}
     };
   }
 
-  onMarkerClick = (googleMapsApiProperties, marker, e) => {
-    debugger;
-    this.setState({
-      selectedPlace: googleMapsApiProperties,
-      activeMarker: marker,
-      showingInfoWindow: true
-    });
-  };
-
-  onMapClicked = () => {
-    if (this.state.showingInfoWindow) {
-      this.setState({
-        showingInfoWindow: false,
-        activeMarker: null
+  componentDidMount() {
+    return fetch('http://localhost:6060/api/allparks')
+      .then(results => {
+        return results.json();
+      })
+      .then(data => {
+        const ParksData = data.map(park => {
+          return park;
+        });
+        this.setState({ MarkersWithData: ParksData }, () => {
+          console.log(this.state);
+        });
       });
-    }
-  };
+  }
 
   render() {
     return (
@@ -42,36 +40,9 @@ export class MapComponent extends Component {
             lng: 35.3035
           }}
         >
-          <Marker
-            onClick={this.onMarkerClick}
-            name={
-              <div>
-                <h2>Nazareth2</h2>
-                <p>heloo2</p>
-              </div>
-            }
-            position={{ lat: 32.6991, lng: 35.3035 }}
-          />
-          <Marker
-            onClick={this.onMarkerClick}
-            name={
-              <div>
-                <h2>Nazareth3</h2>
-                <p>heloo3</p>
-              </div>
-            }
-            position={{ lat: 32.6992, lng: 35.3034 }}
-          />
-          <Marker
-            onClick={this.onMarkerClick}
-            name={
-              <div>
-                <h2>Nazareth1</h2>
-                <p>heloo1</p>
-              </div>
-            }
-            position={{ lat: 32.6994, lng: 35.3033 }}
-          />
+          {this.state.MarkersWithData.map(marker => (
+            <Marker position={marker.parkCoordinates} />
+          ))}
 
           <InfoWindow
             marker={this.state.activeMarker}
