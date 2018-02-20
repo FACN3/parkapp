@@ -99,9 +99,12 @@ const routes = (app, Park) => {
     res.json([
       {
         parkId: 1,
-        parkName: 'shahne1',
+        parkName: 'Nazareth',
         parkDesc: 'a big park',
-        parkCoordinates: { lat: 100, long: 100 },
+        parkCoordinates: {
+          lat: 32.6991,
+          lng: 35.3035
+        },
         rating: 1,
         wazeLink: 'fake Waze link',
         tags: ['tag1', 'tag2', 'tag3'],
@@ -110,9 +113,9 @@ const routes = (app, Park) => {
       },
       {
         parkId: 2,
-        parkName: 'shahne2',
+        parkName: 'Haifa',
         parkDesc: 'a big park',
-        parkCoordinates: { lat: 102, long: 102 },
+        parkCoordinates: { lat: 32.794044, lng: 34.989571 },
         rating: 2,
         wazeLink: 'fake Waze link',
         tags: ['tag1', 'tag2', 'tag3'],
@@ -121,9 +124,9 @@ const routes = (app, Park) => {
       },
       {
         parkId: 3,
-        parkName: 'shahne3',
+        parkName: 'Tel Aviv',
         parkDesc: 'a big park',
-        parkCoordinates: { lat: 101, long: 101 },
+        parkCoordinates: { lat: 32.109333, lng: 34.855499 },
         rating: 3,
         wazeLink: 'fake Waze link',
         tags: ['tag1', 'tag2', 'tag3'],
@@ -134,7 +137,7 @@ const routes = (app, Park) => {
         parkId: 4,
         parkName: 'shahne4',
         parkDesc: 'a big park',
-        parkCoordinates: { lat: 103, long: 103 },
+        parkCoordinates: { lat: 32.9331, lng: 35.0827 },
         rating: 4,
         wazeLink: 'fake Waze link',
         tags: ['tag1', 'tag2', 'tag3'],
@@ -143,9 +146,9 @@ const routes = (app, Park) => {
       },
       {
         parkId: 5,
-        parkName: 'shahne5',
+        parkName: 'Jerusalem',
         parkDesc: 'a big park',
-        parkCoordinates: { lat: 104, long: 104 },
+        parkCoordinates: { lat: 31.7683, lng: 35.2137 },
         rating: 5,
         wazeLink: 'fake Waze link',
         tags: ['tag1', 'tag2', 'tag3'],
