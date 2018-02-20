@@ -10,6 +10,7 @@ class Navbar extends React.Component {
     };
     this.FilterToggled = this.FilterToggled.bind(this);
     this.ShowByToggled = this.ShowByToggled.bind(this);
+    // this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   FilterToggled = e => {
@@ -23,6 +24,15 @@ class Navbar extends React.Component {
       : this.setState({ isShowByToggled: true });
   };
 
+  // handleSubmit(e) {
+  //   e.preventDefault();
+  //   const query = e.target.searchInput.value;
+  //   // console.log(query);
+  //   fetch(`http://localhost:6060/api/parks/city/${query}`).then(res =>
+  //     res.json(res)
+  //   );
+  // }
+
   render() {
     return (
       <div>
@@ -35,10 +45,12 @@ class Navbar extends React.Component {
           <form
             className="form w-50 pa0 bg-white ba b--white dt h2"
             action="TBC"
+            onSubmit={this.props.handleSubmit}
           >
             <input
               className="w-80 ma0 h2 mh0 f5 h3-ns dtc v-mid bn"
               type="text"
+              name="searchInput"
               placeholder="   Search"
             />
             <button
@@ -126,7 +138,7 @@ class Navbar extends React.Component {
               onClick={this.ShowByToggled}
               className="dropbtn white bg-park-blue changa pt1 bn"
             >
-              SHOW BY
+              SHOWBY
             </button>
             <div
               className={
