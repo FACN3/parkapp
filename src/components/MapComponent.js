@@ -11,7 +11,7 @@ export class MapComponent extends Component {
   }
 
   componentDidMount() {
-    return fetch('http://localhost:6060/api/allparks')
+    return fetch('/api/allparks')
       .then(results => {
         return results.json();
       })
@@ -21,6 +21,12 @@ export class MapComponent extends Component {
         });
         this.setState({ MarkersWithData: ParksData });
       });
+    error => {
+      this.setState({
+        isLoaded: true,
+        error
+      });
+    };
   }
 
   render() {
