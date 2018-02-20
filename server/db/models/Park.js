@@ -7,7 +7,8 @@ const ParkSchema = new Schema({
   parkDesc: String,
   parkCoordinates: { lat: Number, lang: Number },
   rating: Number,
-  wazeLink: String,
+  views: Number,
+  city: String,
   tags: Array,
   picturesUrl: { small: Array, big: String }
 });

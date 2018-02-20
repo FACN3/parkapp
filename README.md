@@ -1,6 +1,6 @@
 # :deciduous_tree::deciduous_tree::evergreen_tree: **CITY PARKS** :evergreen_tree::deciduous_tree::deciduous_tree:
 
-### [Founders & Coders](https://foundersandcoders.com/) have been working with the [Gallilee Society](http://www.gal-soc.org/) to produce an MVP ready apps to help solve some of their most challenging problems.
+### [Founders & Coders](https://foundersandcoders.com/) have been working with the [Gallilee Society](http://www.gal-soc.org/) to produce an MVP ready app to help solve some of their most challenging problems.
 
 Take a look at our MVP: [LINK](https://parkappfac.herokuapp.com/)
 
@@ -41,10 +41,8 @@ city parks for the Arab population in Israel
 We created a MVP centered around a Israel map interface. Users could access the
 map (Google Map API), select Israeli city park locations, search locations by
 proximity and then go to pages with appropriate information about the park
-selected. There were links to additional information, directions that could be
-used with the Waze App. We provided the user to filter results based on
-particular categories or to search by these. Each park was therefore tagged with
-particular activities which is had.
+selected. There were links to additional information along with directions that could be
+used with the Waze App. We provided the user with the ability to filter results based on categories and to search for parks by distance, rating and views. 
 
 You can see a English language version of our pre-build prototype on
 [Invision](https://invis.io/3QFWSDG7VNZ#/277361715_Group_2).

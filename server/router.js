@@ -27,6 +27,19 @@ const routes = (app, Park) => {
       res.json(Park);
     });
   });
+  //GET PARK BY CITY
+  app.get('/api/parks/city/:city', (req, res) => {
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header(
+      'Access-Control-Allow-Headers',
+      'Origin, X-Requested-With, Content-Type, Accept'
+    );
+    Park.find({ city: req.params.city }, (err, Park) => {
+      if (err) return res.status(500).json({ error: err });
+      if (!Park) return res.status(404).json({ error: 'Park not found' });
+      res.json(Park);
+    });
+  });
   //CREATE PARK
   app.post('/api/parks', (req, res) => {
     const park = new Park();
@@ -38,6 +51,7 @@ const routes = (app, Park) => {
     };
     park.rating = req.body.rating;
     park.views = req.body.views;
+    park.city = req.body.city;
     park.tags = req.body.tags;
     park.picturesUrl = {
       small: [req.body.picturesUrl.small[0], req.body.picturesUrl.small[1]],
@@ -85,9 +99,12 @@ const routes = (app, Park) => {
     res.json([
       {
         parkId: 1,
-        parkName: 'shahne1',
+        parkName: 'Nazareth',
         parkDesc: 'a big park',
-        parkCoordinates: { lat: 100, long: 100 },
+        parkCoordinates: {
+          lat: 32.6991,
+          lng: 35.3035
+        },
         rating: 1,
         wazeLink: 'fake Waze link',
         tags: ['waterfall', 'BBQ', 'tag3'],
@@ -96,9 +113,9 @@ const routes = (app, Park) => {
       },
       {
         parkId: 2,
-        parkName: 'shahne2',
+        parkName: 'Haifa',
         parkDesc: 'a big park',
-        parkCoordinates: { lat: 102, long: 102 },
+        parkCoordinates: { lat: 32.794044, lng: 34.989571 },
         rating: 2,
         wazeLink: 'fake Waze link',
         tags: ['tag1', 'campsite', 'tag3'],
@@ -107,9 +124,9 @@ const routes = (app, Park) => {
       },
       {
         parkId: 3,
-        parkName: 'shahne3',
+        parkName: 'Tel Aviv',
         parkDesc: 'a big park',
-        parkCoordinates: { lat: 101, long: 101 },
+        parkCoordinates: { lat: 32.109333, lng: 34.855499 },
         rating: 3,
         wazeLink: 'fake Waze link',
         tags: ['bike trail', 'tag2', 'tag3'],
@@ -120,7 +137,7 @@ const routes = (app, Park) => {
         parkId: 4,
         parkName: 'shahne4',
         parkDesc: 'a big park',
-        parkCoordinates: { lat: 103, long: 103 },
+        parkCoordinates: { lat: 32.9331, lng: 35.0827 },
         rating: 4,
         wazeLink: 'fake Waze link',
         tags: ['elderly-friendly', 'free entrance', 'tag3'],
@@ -129,9 +146,9 @@ const routes = (app, Park) => {
       },
       {
         parkId: 5,
-        parkName: 'shahne5',
+        parkName: 'Jerusalem',
         parkDesc: 'a big park',
-        parkCoordinates: { lat: 104, long: 104 },
+        parkCoordinates: { lat: 31.7683, lng: 35.2137 },
         rating: 5,
         wazeLink: 'fake Waze link',
         tags: ['tag1', 'playground', 'tag3'],
