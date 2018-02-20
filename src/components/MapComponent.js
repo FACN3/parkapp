@@ -1,6 +1,7 @@
 import { Map, InfoWindow, Marker, GoogleApiWrapper } from 'google-maps-react';
 import React, { Component } from 'react';
 import Navbar from './Navbar';
+import ReactDom from 'react-dom';
 
 export class MapComponent extends Component {
   constructor(props) {
@@ -8,12 +9,37 @@ export class MapComponent extends Component {
     this.state = {
       showingInfoWindow: false,
       activeMarker: {},
-      selectedPlace: {}
+      selectedPlace: {},
+      initialCenter: { lat: 40.6991, lng: 35.3035 },
+      locationIsActive: false
     };
   }
 
+  componentWillMount() {
+    if (navigator && navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(position => {
+        const coords = position.coords;
+        console.log(this);
+        console.log(coords);
+        this.setState({
+          initialCenter: { lat: coords.latitude, lng: coords.longitude },
+          locationIsActive: true
+        });
+      });
+    }
+  }
+
+  recenterMap = foo => {
+    if (navigator && navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(position => {
+        const coords = position.coords;
+       const foo =  { lat: coords.latitude, lng: coords.longitude };
+       return  { lat: 43.6991, lng: 35.3035 };
+      });
+    }
+  };
+
   onMarkerClick = (googleMapsApiProperties, marker, e) => {
-    debugger;
     this.setState({
       selectedPlace: googleMapsApiProperties,
       activeMarker: marker,
@@ -33,13 +59,13 @@ export class MapComponent extends Component {
   render() {
     return (
       <div>
-        <Navbar location={this.props.location.pathname}  />
+        <Navbar location={this.props.location.pathname} />
         <Map
           google={this.props.google}
           onClick={this.onMapClicked}
           initialCenter={{
-            lat: 32.6991,
-            lng: 35.3035
+            lat: this.state.initialCenter.lat,
+            lng: this.state.initialCenter.lng
           }}
         >
           <Marker
