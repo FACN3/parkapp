@@ -44,7 +44,7 @@ class ParkList extends React.Component {
   };
 
   componentDidMount() {
-    fetch('http://localhost:6060/api/allParks')
+    fetch('/api/allparks')
       .then(res => res.json())
       .then(
         result => {
