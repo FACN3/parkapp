@@ -138,7 +138,7 @@ class Navbar extends React.Component {
               onClick={this.ShowByToggled}
               className="dropbtn white bg-park-blue changa pt1 bn"
             >
-              SHOW BY
+              SHOWBY
             </button>
             <div
               className={
