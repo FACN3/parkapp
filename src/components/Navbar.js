@@ -184,13 +184,7 @@ class Navbar extends React.Component {
           </div>
         </nav>
 
-        <nav
-          className={
-            this.props.location === '/map'
-              ? 'navbar4 h2 flex justify-between w-100 bg-park-blue changa f4 h3-ns f2-ns z-1'
-              : 'dn'
-          }
-        >
+        <nav className={this.props.location === '/map' ? 'dn' : 'dn'}>
           <div className="showby w-50 br b--white tc z-1 pt2-ns">
             <button
               onClick={this.FilterToggled}
