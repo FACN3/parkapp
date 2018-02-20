@@ -5,6 +5,7 @@ import LikeIcon from '../assets/like.png';
 import PlaceIcon from '../assets/place.png';
 import RouteIcon from '../assets/route.png';
 import GlobeIcon from '../assets/grid-world.png';
+import CarIcon from '../assets/car.png';
 
 class ParkFullDetails extends Component {
   constructor(props) {
@@ -48,7 +49,7 @@ class ParkFullDetails extends Component {
             <h2 className="black ma0 pt2 pl3">{park.parkName}</h2>
           </section>
           <GreenTag tags={park.tags} />
-          <section className="h-100 max-height-45 mt3">
+          <section className="h-100 max-height-45">
             <img
               src={park.picturesUrl.big}
               className="db fr w-75 max-height-45"
@@ -70,7 +71,7 @@ class ParkFullDetails extends Component {
                 <img src={LikeIcon} alt="" />
               </figure>
               <figure className="flex-grow-1">
-                <img src={RouteIcon} alt="" />
+                <img src={CarIcon} alt="" />
               </figure>
               <figure className="flex-grow-2">
                 <img src={PlaceIcon} alt="" />

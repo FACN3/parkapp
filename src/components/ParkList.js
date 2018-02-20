@@ -81,6 +81,7 @@ class ParkList extends React.Component {
     e.preventDefault();
     const query = e.target.searchInput.value;
     fetch(`/api/parks/city/${query}`)
+
       .then(res => res.json())
       .then(result => {
         this.setState({
