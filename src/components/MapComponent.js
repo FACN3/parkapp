@@ -1,7 +1,6 @@
 import { Map, InfoWindow, GoogleApiWrapper, Marker } from 'google-maps-react';
 import React, { Component } from 'react';
 import Navbar from './Navbar';
-import ReactDom from 'react-dom';
 
 export class MapComponent extends Component {
   constructor(props) {
@@ -37,8 +36,8 @@ export class MapComponent extends Component {
         <Map
           google={this.props.google}
           initialCenter={{
-            lat: this.state.initialCenter.lat,
-            lng: this.state.initialCenter.lng
+            lat: 32.6991,
+            lng: 35.3035
           }}
         >
           {this.state.MarkersWithData.map(marker => (
