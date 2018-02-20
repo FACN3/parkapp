@@ -80,42 +80,70 @@ class Navbar extends React.Component {
               <a
                 href=""
                 className="black no-underline mt1 pa1 ba b--black-20 pl3 bg-white"
+                onClick={event => {
+                  event.preventDefault();
+                  this.props.filterByTag('waterfall');
+                }}
               >
                 waterfall
               </a>
               <a
                 href=""
                 className="black no-underline pa1 bl br bb b--black-20 pl3 bg-white"
+                onClick={event => {
+                  event.preventDefault();
+                  this.props.filterByTag('BBQ');
+                }}
               >
                 BBQ
               </a>
               <a
                 href=""
                 className="black no-underline pa1 bl br bb b--black-20 pl3 bg-white"
+                onClick={event => {
+                  event.preventDefault();
+                  this.props.filterByTag('campsite');
+                }}
               >
                 campsite
               </a>
               <a
                 href=""
                 className="black no-underline pa1 bl br bb b--black-20 pl3 bg-white"
+                onClick={event => {
+                  event.preventDefault();
+                  this.props.filterByTag('playground');
+                }}
               >
                 playground
               </a>
               <a
                 href=""
                 className="black no-underline pa1 bl br bb b--black-20 pl3 bg-white"
+                onClick={event => {
+                  event.preventDefault();
+                  this.props.filterByTag('free entrance');
+                }}
               >
                 free entrance
               </a>
               <a
                 href=""
                 className="black no-underline pa1 bl br bb b--black-20 pl3 bg-white"
+                onClick={event => {
+                  event.preventDefault();
+                  this.props.filterByTag('bike trail');
+                }}
               >
                 bike trail
               </a>
               <a
                 href=""
                 className="black no-underline pa1 bl br bb b--black-20 pl3 bg-white"
+                onClick={event => {
+                  event.preventDefault();
+                  this.props.filterByTag('elderly-friendly');
+                }}
               >
                 elderly-friendly
               </a>

@@ -90,9 +90,9 @@ const routes = (app, Park) => {
         parkCoordinates: { lat: 100, long: 100 },
         rating: 1,
         wazeLink: 'fake Waze link',
-        tags: ['tag1', 'tag2', 'tag3'],
+        tags: ['waterfall', 'BBQ', 'tag3'],
         picturesUrl: { small: ['fakeUrl', 'fakeUrl'], big: 'fakeUrl' },
-        views : 5
+        views: 5
       },
       {
         parkId: 2,
@@ -101,9 +101,9 @@ const routes = (app, Park) => {
         parkCoordinates: { lat: 102, long: 102 },
         rating: 2,
         wazeLink: 'fake Waze link',
-        tags: ['tag1', 'tag2', 'tag3'],
+        tags: ['tag1', 'campsite', 'tag3'],
         picturesUrl: { small: ['fakeUrl', 'fakeUrl'], big: 'fakeUrl' },
-        views : 4
+        views: 4
       },
       {
         parkId: 3,
@@ -112,9 +112,9 @@ const routes = (app, Park) => {
         parkCoordinates: { lat: 101, long: 101 },
         rating: 3,
         wazeLink: 'fake Waze link',
-        tags: ['tag1', 'tag2', 'tag3'],
+        tags: ['bike trail', 'tag2', 'tag3'],
         picturesUrl: { small: ['fakeUrl', 'fakeUrl'], big: 'fakeUrl' },
-        views : 3
+        views: 3
       },
       {
         parkId: 4,
@@ -123,9 +123,9 @@ const routes = (app, Park) => {
         parkCoordinates: { lat: 103, long: 103 },
         rating: 4,
         wazeLink: 'fake Waze link',
-        tags: ['tag1', 'tag2', 'tag3'],
+        tags: ['elderly-friendly', 'free entrance', 'tag3'],
         picturesUrl: { small: ['fakeUrl', 'fakeUrl'], big: 'fakeUrl' },
-        views : 2
+        views: 2
       },
       {
         parkId: 5,
@@ -134,9 +134,9 @@ const routes = (app, Park) => {
         parkCoordinates: { lat: 104, long: 104 },
         rating: 5,
         wazeLink: 'fake Waze link',
-        tags: ['tag1', 'tag2', 'tag3'],
-        picturesUrl: { small: ['fakeUrl', 'fakeUrl'], big: 'fakeUrl' }, 
-        views : 1
+        tags: ['tag1', 'playground', 'tag3'],
+        picturesUrl: { small: ['fakeUrl', 'fakeUrl'], big: 'fakeUrl' },
+        views: 1
       }
     ]);
   });

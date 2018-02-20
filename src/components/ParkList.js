@@ -8,7 +8,9 @@ class ParkList extends React.Component {
     this.state = {
       error: null,
       isLoaded: false,
-      parks: []
+      isFiltered: false,
+      parks: [],
+      preFiltered: []
     };
   }
 
@@ -36,8 +38,25 @@ class ParkList extends React.Component {
             b.parkCoordinates.lang
           );
         });
-        this.setState({ parks: parksCopy });
+        this.setState({ parks: parksCopy, isFiltered: false });
         break;
+    }
+  };
+
+  filterByTag = tagName => {
+    const { parks } = this.state;
+    if (this.state.isFiltered === false) {
+      this.setState({ preFiltered: parks, isFiltered: true }, () => {
+        const result = this.state.preFiltered.filter(parkElement =>
+          parkElement.tags.includes(tagName)
+        );
+        this.setState({ parks: result });
+      });
+    } else {
+      const result = this.state.preFiltered.filter(parkElement =>
+        parkElement.tags.includes(tagName)
+      );
+      this.setState({ parks: result });
     }
   };
 
@@ -83,6 +102,7 @@ class ParkList extends React.Component {
         <Navbar
           changeFilter={this.changeFilter}
           location={this.props.location.pathname}
+          filterByTag={this.filterByTag}
         />
         {this.gettingParks()}
       </div>
