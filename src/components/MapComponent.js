@@ -6,10 +6,7 @@ export class MapComponent extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      MarkersWithData: [],
-      showingInfoWindow: false,
-      activeMarker: {},
-      selectedPlace: {}
+      MarkersWithData: []
     };
   }
 
@@ -22,9 +19,7 @@ export class MapComponent extends Component {
         const ParksData = data.map(park => {
           return park;
         });
-        this.setState({ MarkersWithData: ParksData }, () => {
-          console.log(this.state);
-        });
+        this.setState({ MarkersWithData: ParksData });
       });
   }
 
@@ -34,7 +29,6 @@ export class MapComponent extends Component {
         <Navbar location={this.props.location.pathname} />
         <Map
           google={this.props.google}
-          onClick={this.onMapClicked}
           initialCenter={{
             lat: 32.6991,
             lng: 35.3035
@@ -43,15 +37,6 @@ export class MapComponent extends Component {
           {this.state.MarkersWithData.map(marker => (
             <Marker position={marker.parkCoordinates} />
           ))}
-
-          <InfoWindow
-            marker={this.state.activeMarker}
-            visible={this.state.showingInfoWindow}
-          >
-            <div>
-              <h1>{this.state.selectedPlace.name}</h1>
-            </div>
-          </InfoWindow>
         </Map>
       </div>
     );
