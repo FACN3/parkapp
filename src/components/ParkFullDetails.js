@@ -84,7 +84,7 @@ class ParkFullDetails extends Component {
             </section>
             <section>
               <figure className="flex-grow-1">
-                <img src={GlobeIcon} className="h1 w1 mr1" alt="" />
+                <img src={GlobeIcon} className="h1 w1 mr2" alt="" />
                 <a href="#">www.fake-web-site.co.il</a>
               </figure>
             </section>
