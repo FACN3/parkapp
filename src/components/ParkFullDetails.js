@@ -37,7 +37,6 @@ class ParkFullDetails extends Component {
   }
 
   gettingFullDetails = () => {
-    debugger;
     const { error, isLoaded, park } = this.state;
     if (error) {
       return <div>Error: {error.message}</div>;
