@@ -25,5 +25,5 @@
     "eject": "react-scripts eject",
     "heroku-postbuild": "npm run build"
   },
-  "proxy": "http://parkappfac.herokuapp.com"
+  "proxy": "https://parkappfac.herokuapp.com/"
 }
