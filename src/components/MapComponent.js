@@ -6,7 +6,10 @@ export class MapComponent extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      MarkersWithData: []
+      MarkersWithData: [],
+      showingInfoWindow: false,
+      activeMarker: {},
+      selectedPlace: {}
     };
   }
 
@@ -28,12 +31,30 @@ export class MapComponent extends Component {
       });
     };
   }
+  onMarkerClick = (props, marker, e) => {
+    console.log(props);
+    this.setState({
+      selectedPlace: props,
+      activeMarker: marker,
+      showingInfoWindow: true
+    });
+  };
+
+  onMapClicked = props => {
+    if (this.state.showingInfoWindow) {
+      this.setState({
+        showingInfoWindow: false,
+        activeMarker: null
+      });
+    }
+  };
 
   render() {
     return (
       <div>
         <Navbar location={this.props.location.pathname} />
         <Map
+          onClick={this.onMapClicked}
           google={this.props.google}
           initialCenter={{
             lat: 32.6991,
@@ -41,8 +62,25 @@ export class MapComponent extends Component {
           }}
         >
           {this.state.MarkersWithData.map(marker => (
-            <Marker position={marker.parkCoordinates} />
+            <Marker
+              onClick={this.onMarkerClick}
+              position={marker.parkCoordinates}
+              name={marker.parkName}
+              pic={marker.picturesUrl.small}
+            />
           ))}
+
+          <InfoWindow
+            marker={this.state.activeMarker}
+            visible={this.state.showingInfoWindow}
+          >
+            <div>
+              <h1>
+                {this.state.selectedPlace.name}
+                <img src={this.state.selectedPlace.pic} alt="" />
+              </h1>
+            </div>
+          </InfoWindow>
         </Map>
       </div>
     );
