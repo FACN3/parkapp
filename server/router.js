@@ -47,7 +47,7 @@ const routes = (app, Park) => {
     park.parkDesc = req.body.parkDesc;
     park.parkCoordinates = {
       lat: req.body.parkCoordinates.lat,
-      long: req.body.parkCoordinates.long
+      lang: req.body.parkCoordinates.lang
     };
     park.rating = req.body.rating;
     park.views = req.body.views;
