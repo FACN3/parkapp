@@ -44,7 +44,7 @@ class ParkList extends React.Component {
   };
 
   componentDidMount() {
-    fetch('/api/allparks')
+    fetch('/api/parks')
       .then(res => res.json())
       .then(
         result => {
@@ -79,9 +79,11 @@ class ParkList extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    const query = e.target.searchInput.value;
+    const query = e.target.searchInput.value
+      .toLowerCase()
+      .split(' ')
+      .join('');
     fetch(`/api/parks/city/${query}`)
-
       .then(res => res.json())
       .then(result => {
         this.setState({

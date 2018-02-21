@@ -10,7 +10,6 @@ class Navbar extends React.Component {
     };
     this.FilterToggled = this.FilterToggled.bind(this);
     this.ShowByToggled = this.ShowByToggled.bind(this);
-    // this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   FilterToggled = e => {
@@ -23,15 +22,6 @@ class Navbar extends React.Component {
       ? this.setState({ isShowByToggled: false })
       : this.setState({ isShowByToggled: true });
   };
-
-  // handleSubmit(e) {
-  //   e.preventDefault();
-  //   const query = e.target.searchInput.value;
-  //   // console.log(query);
-  //   fetch(`http://localhost:6060/api/parks/city/${query}`).then(res =>
-  //     res.json(res)
-  //   );
-  // }
 
   render() {
     return (
@@ -54,7 +44,7 @@ class Navbar extends React.Component {
               placeholder="   Search"
             />
             <button
-              className="button w-20 ma0 h2 bg-white pt1 bn h3-ns dtc v-mid"
+              className="button w-20 ma0 h1 bg-white bn h3-ns dtc v-mid"
               type="submit"
             >
               <i className="fas fa-search pointer bn" />
@@ -184,13 +174,7 @@ class Navbar extends React.Component {
           </div>
         </nav>
 
-        <nav
-          className={
-            this.props.location === '/map'
-              ? 'navbar4 h2 flex justify-between w-100 bg-park-blue changa f4 h3-ns f2-ns z-1'
-              : 'dn'
-          }
-        >
+        <nav className={this.props.location === '/map' ? 'dn' : 'dn'}>
           <div className="showby w-50 br b--white tc z-1 pt2-ns">
             <button
               onClick={this.FilterToggled}
