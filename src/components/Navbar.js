@@ -35,14 +35,16 @@ class Navbar extends React.Component {
           <form
             className="form w-50 pa0 bg-white ba b--white dt h2"
             action="TBC"
+            onSubmit={this.props.handleSubmit}
           >
             <input
               className="w-80 ma0 h2 mh0 f5 h3-ns dtc v-mid bn"
               type="text"
+              name="searchInput"
               placeholder="   Search"
             />
             <button
-              className="button w-20 ma0 h2 bg-white pt1 bn h3-ns dtc v-mid"
+              className="button w-20 ma0 h1 bg-white bn h3-ns dtc v-mid"
               type="submit"
             >
               <i className="fas fa-search pointer bn" />
@@ -80,42 +82,70 @@ class Navbar extends React.Component {
               <a
                 href=""
                 className="black no-underline mt1 pa1 ba b--black-20 pl3 bg-white"
+                onClick={event => {
+                  event.preventDefault();
+                  this.props.filterByTag('waterfall');
+                }}
               >
                 waterfall
               </a>
               <a
                 href=""
                 className="black no-underline pa1 bl br bb b--black-20 pl3 bg-white"
+                onClick={event => {
+                  event.preventDefault();
+                  this.props.filterByTag('BBQ');
+                }}
               >
                 BBQ
               </a>
               <a
                 href=""
                 className="black no-underline pa1 bl br bb b--black-20 pl3 bg-white"
+                onClick={event => {
+                  event.preventDefault();
+                  this.props.filterByTag('campsite');
+                }}
               >
                 campsite
               </a>
               <a
                 href=""
                 className="black no-underline pa1 bl br bb b--black-20 pl3 bg-white"
+                onClick={event => {
+                  event.preventDefault();
+                  this.props.filterByTag('playground');
+                }}
               >
                 playground
               </a>
               <a
                 href=""
                 className="black no-underline pa1 bl br bb b--black-20 pl3 bg-white"
+                onClick={event => {
+                  event.preventDefault();
+                  this.props.filterByTag('free entrance');
+                }}
               >
                 free entrance
               </a>
               <a
                 href=""
                 className="black no-underline pa1 bl br bb b--black-20 pl3 bg-white"
+                onClick={event => {
+                  event.preventDefault();
+                  this.props.filterByTag('bike trail');
+                }}
               >
                 bike trail
               </a>
               <a
                 href=""
                 className="black no-underline pa1 bl br bb b--black-20 pl3 bg-white"
+                onClick={event => {
+                  event.preventDefault();
+                  this.props.filterByTag('elderly-friendly');
+                }}
               >
                 elderly-friendly
               </a>
@@ -126,7 +156,7 @@ class Navbar extends React.Component {
               onClick={this.ShowByToggled}
               className="dropbtn white bg-park-blue changa pt1 bn"
             >
-              SHOW BY
+              SHOWBY
             </button>
             <div
               className={
@@ -172,13 +202,7 @@ class Navbar extends React.Component {
           </div>
         </nav>
 
-        <nav
-          className={
-            this.props.location === '/map'
-              ? 'navbar4 h2 flex justify-between w-100 bg-park-blue changa f4 h3-ns f2-ns z-1'
-              : 'dn'
-          }
-        >
+        <nav className={this.props.location === '/map' ? 'dn' : 'dn'}>
           <div className="showby w-50 br b--white tc z-1 pt2-ns">
             <button
               onClick={this.FilterToggled}

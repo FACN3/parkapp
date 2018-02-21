@@ -27,6 +27,11 @@
   float: left;
 }
 
+.button {
+  padding: 0;
+  line-height: 0;
+}
+
 @media screen and (min-width: 30em) {
   .pt22-ns {
     padding-top: 0.7rem;
