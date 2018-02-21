@@ -26,11 +26,6 @@ class Navbar extends React.Component {
     return (
       <div>
         <nav className="navbar1 h2 flex justify-between w-100 bg-park-blue bb b--white changa f4 h3-ns">
-          <div className="w-50 pt1 tc pt22-ns br b--white">
-            <a href="/" className="white no-underline f2-ns">
-              National Park
-            </a>
-          </div>
           <form
             className="form w-50 pa0 bg-white ba b--white dt h2"
             action="TBC"
@@ -40,7 +35,7 @@ class Navbar extends React.Component {
               className="w-80 ma0 h2 mh0 f5 h3-ns dtc v-mid bn"
               type="text"
               name="searchInput"
-              placeholder="   Search"
+              placeholder="                        ابحث"
             />
             <button
               className="button w-20 ma0 h1 bg-white bn h3-ns dtc v-mid"
@@ -49,6 +44,11 @@ class Navbar extends React.Component {
               <i className="fas fa-search pointer bn" />
             </button>
           </form>
+          <div className="w-50 pt1 tc pt22-ns br b--white">
+            <a href="/" className="white no-underline f2-ns">
+              منتزهات وطنيه
+            </a>
+          </div>
         </nav>
 
         <nav
@@ -61,7 +61,7 @@ class Navbar extends React.Component {
         >
           <div className="w-30 pt1 tc pt22-ns">
             <a href="/map" className="white no-underline">
-              MAP
+              خريطة
             </a>
           </div>
           <div className="showby w-40 bl br b--white tc z-1 pt2-ns">
@@ -69,7 +69,7 @@ class Navbar extends React.Component {
               onClick={this.FilterToggled}
               className="dropbtn white bg-park-blue changa pt1 bn"
             >
-              FILTER
+              فلتر
             </button>
             <div
               className={
@@ -86,7 +86,7 @@ class Navbar extends React.Component {
                   this.props.filterByTag('waterfall');
                 }}
               >
-                waterfall
+                شلالات
               </a>
               <a
                 href=""
@@ -96,7 +96,7 @@ class Navbar extends React.Component {
                   this.props.filterByTag('BBQ');
                 }}
               >
-                BBQ
+                مكان للشواء
               </a>
               <a
                 href=""
@@ -106,7 +106,7 @@ class Navbar extends React.Component {
                   this.props.filterByTag('campsite');
                 }}
               >
-                campsite
+                مكان للتخييم
               </a>
               <a
                 href=""
@@ -116,7 +116,7 @@ class Navbar extends React.Component {
                   this.props.filterByTag('playground');
                 }}
               >
-                playground
+                مكان للعب الاطفال
               </a>
               <a
                 href=""
@@ -126,7 +126,7 @@ class Navbar extends React.Component {
                   this.props.filterByTag('free entrance');
                 }}
               >
-                free entrance
+                دخول مجاني
               </a>
               <a
                 href=""
@@ -136,7 +136,7 @@ class Navbar extends React.Component {
                   this.props.filterByTag('bike trail');
                 }}
               >
-                bike trail
+                ممر للدراجات
               </a>
               <a
                 href=""
@@ -146,7 +146,7 @@ class Navbar extends React.Component {
                   this.props.filterByTag('elderly-friendly');
                 }}
               >
-                elderly-friendly
+                ملائم لكبار السن
               </a>
             </div>
           </div>
@@ -155,7 +155,7 @@ class Navbar extends React.Component {
               onClick={this.ShowByToggled}
               className="dropbtn white bg-park-blue changa pt1 bn"
             >
-              SHOWBY
+              اعرض حسب
             </button>
             <div
               className={
@@ -168,19 +168,19 @@ class Navbar extends React.Component {
                 onClick={() => this.props.changeFilter('distance')}
                 className="black no-underline mt1 pa1 ba b--black-20 bg-white"
               >
-                distance
+                المسافه
               </button>
               <button
                 onClick={() => this.props.changeFilter('rating')}
                 className="black no-underline ma0 pa1 bl br bb b--black-20 bg-white"
               >
-                rating
+                تقييم الزوار
               </button>
               <button
                 onClick={() => this.props.changeFilter('views')}
                 className="black no-underline ma0 pa1 bl br bb b--black-20 bg-white"
               >
-                views
+                مشاهدات
               </button>
             </div>
           </div>
@@ -189,14 +189,14 @@ class Navbar extends React.Component {
         <nav
           className={
             this.props.location.includes('parkFullDetails')
-              ? 'navbar3 h2 w-100 bg-park-blue bt bb b--white changa h3-ns z-1'
+              ? 'navbar3 h2 w-100 bg-park-blue bb b--white changa h3-ns z-1'
               : 'dn'
           }
         >
           <div className="w-100 tc pl3 h2 tl-ns v-mid flex items-center pt4-ns">
             <i className="fas fa-chevron-left white f6 fl f4-ns " />
             <a href="/" className="white no-underline f5 fl pl2 f3-ns">
-              See more in this area
+              شاهد المزيد في هذه المنطقة
             </a>
           </div>
         </nav>

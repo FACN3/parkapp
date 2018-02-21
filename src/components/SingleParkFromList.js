@@ -9,14 +9,14 @@ const SingleParkFromList = props => {
           href={`/parkFullDetails/${props.park._id}`}
           className="no-underline black"
         >
-          <p className="tc ma3 f3 b f2-l">{props.park.parkName}</p>
+          <p className="tc ma2 f3 b f2-l">{props.park.parkName}</p>
         </a>
         <GreenTag tags={props.park.tags} />
-        <figure className="image w-70 h-50 mt3 mt4-ns center">
+        <figure className="image w5 h5 mt3 mt4-ns center">
           <img
             src={props.park.picturesUrl.big}
             alt="park pic"
-            className="w-100 h-100"
+            className="w-100 h4"
           />
         </figure>
       </div>
