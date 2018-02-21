@@ -8,7 +8,9 @@ class ParkList extends React.Component {
     this.state = {
       error: null,
       isLoaded: false,
-      parks: []
+      isFiltered: false,
+      parks: [],
+      preFiltered: []
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -38,13 +40,30 @@ class ParkList extends React.Component {
             b.parkCoordinates.lang
           );
         });
-        this.setState({ parks: parksCopy });
+        this.setState({ parks: parksCopy, isFiltered: false });
         break;
     }
   };
 
+  filterByTag = tagName => {
+    const { parks } = this.state;
+    if (this.state.isFiltered === false) {
+      this.setState({ preFiltered: parks, isFiltered: true }, () => {
+        const result = this.state.preFiltered.filter(parkElement =>
+          parkElement.tags.includes(tagName)
+        );
+        this.setState({ parks: result });
+      });
+    } else {
+      const result = this.state.preFiltered.filter(parkElement =>
+        parkElement.tags.includes(tagName)
+      );
+      this.setState({ parks: result });
+    }
+  };
+
   componentDidMount() {
-    fetch('/api/allparks')
+    fetch('/api/parks')
       .then(res => res.json())
       .then(
         result => {
@@ -79,9 +98,11 @@ class ParkList extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    const query = e.target.searchInput.value;
+    const query = e.target.searchInput.value
+      .toLowerCase()
+      .split(' ')
+      .join('');
     fetch(`/api/parks/city/${query}`)
-
       .then(res => res.json())
       .then(result => {
         this.setState({
@@ -97,6 +118,7 @@ class ParkList extends React.Component {
         <Navbar
           changeFilter={this.changeFilter}
           location={this.props.location.pathname}
+          filterByTag={this.filterByTag}
           handleSubmit={this.handleSubmit}
         />
         {this.gettingParks()}
