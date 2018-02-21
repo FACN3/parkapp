@@ -54,7 +54,7 @@ class Navbar extends React.Component {
               placeholder="   Search"
             />
             <button
-              className="button w-20 ma0 h2 bg-white pt1 bn h3-ns dtc v-mid"
+              className="button w-20 ma0 h1 bg-white bn h3-ns dtc v-mid"
               type="submit"
             >
               <i className="fas fa-search pointer bn" />

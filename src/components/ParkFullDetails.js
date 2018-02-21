@@ -3,7 +3,6 @@ import Navbar from './Navbar';
 import GreenTag from './GreenTag';
 import LikeIcon from '../assets/like.png';
 import PlaceIcon from '../assets/place.png';
-import RouteIcon from '../assets/route.png';
 import GlobeIcon from '../assets/grid-world.png';
 import CarIcon from '../assets/car.png';
 
