@@ -99,7 +99,7 @@ const routes = (app, Park) => {
     res.json([
       {
         parkId: 1,
-        parkName: 'Nazareth',
+        parkName: 'حديقة يهوشوا بارك حديقة هااركون',
         parkDesc: 'a big park',
         parkCoordinates: {
           lat: 32.6991,
@@ -107,52 +107,76 @@ const routes = (app, Park) => {
         },
         rating: 1,
         wazeLink: 'fake Waze link',
-        tags: ['waterfall', 'BBQ', 'tag3'],
-        picturesUrl: { small: ['fakeUrl', 'fakeUrl'], big: 'fakeUrl' },
+        tags: ['tag1', 'tag2', 'tag3'],
+        picturesUrl: {
+          small: [
+            'http://a7.org/albums/665x1500/83987.jpg',
+            'http://www.mapa.co.il/WWWTemp/UDP/6074_800_600.jpeg'
+          ],
+          big: 'fakeUrl'
+        },
         views: 5
       },
       {
         parkId: 2,
-        parkName: 'Haifa',
+        parkName: ' نيشر بارك - نهال كاتيا',
         parkDesc: 'a big park',
         parkCoordinates: { lat: 32.794044, lng: 34.989571 },
         rating: 2,
         wazeLink: 'fake Waze link',
-        tags: ['tag1', 'campsite', 'tag3'],
-        picturesUrl: { small: ['fakeUrl', 'fakeUrl'], big: 'fakeUrl' },
+        tags: ['tag1', 'tag2', 'tag3'],
+        picturesUrl: {
+          small: [
+            'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3kK2vkN5TnLyL-z7gRnynnC2KLeyzyuOxYz1aeY4fOBcd_WJH'
+          ],
+          big: 'fakeUrl'
+        },
         views: 4
       },
       {
         parkId: 3,
-        parkName: 'Tel Aviv',
+        parkName: 'رافنز بارك - الجولان',
         parkDesc: 'a big park',
-        parkCoordinates: { lat: 32.109333, lng: 34.855499 },
+        parkCoordinates: { lat: 32.975662764, lng: 35.742997028 },
         rating: 3,
         wazeLink: 'fake Waze link',
-        tags: ['bike trail', 'tag2', 'tag3'],
-        picturesUrl: { small: ['fakeUrl', 'fakeUrl'], big: 'fakeUrl' },
+        tags: ['tag1', 'tag2', 'tag3'],
+        picturesUrl: {
+          small: ['http://www.mapa.co.il/WWWTemp/UDP/120215_800_600.jpeg'],
+          big: 'fakeUrl'
+        },
         views: 3
       },
       {
         parkId: 4,
-        parkName: 'shahne4',
+        parkName: 'أشزيف ناتيونال بارك',
         parkDesc: 'a big park',
         parkCoordinates: { lat: 32.9331, lng: 35.0827 },
         rating: 4,
         wazeLink: 'fake Waze link',
-        tags: ['elderly-friendly', 'free entrance', 'tag3'],
-        picturesUrl: { small: ['fakeUrl', 'fakeUrl'], big: 'fakeUrl' },
+        tags: ['tag1', 'tag2', 'tag3'],
+        picturesUrl: {
+          small: [
+            'http://www.inature.info/w/images/thumb/2/2f/Mishmar_hacarmel1.jpg/320px-Mishmar_hacarmel1.jpg'
+          ],
+          big: 'fakeUrl'
+        },
         views: 2
       },
       {
         parkId: 5,
-        parkName: 'Jerusalem',
+        parkName: 'حديقة هيشت',
         parkDesc: 'a big park',
         parkCoordinates: { lat: 31.7683, lng: 35.2137 },
         rating: 5,
         wazeLink: 'fake Waze link',
-        tags: ['tag1', 'playground', 'tag3'],
-        picturesUrl: { small: ['fakeUrl', 'fakeUrl'], big: 'fakeUrl' },
+        tags: ['tag1', 'tag2', 'tag3'],
+        picturesUrl: {
+          small: [
+            'http://www.inature.info/w/images/thumb/f/f2/Hecht_park.jpg/320px-Hecht_park.jpg'
+          ],
+          big: 'fakeUrl'
+        },
         views: 1
       }
     ]);
