@@ -89,9 +89,7 @@ class ParkFullDetails extends Component {
               </figure>
             </section>
             <section className="bg-park-blue tc v-mid dt w-100">
-              <p className="white h2 f4 v-mid f4 ma0 dtc">
-                Additional Information
-              </p>
+              <p className="white h2 f4 v-mid f4 ma0 dtc">معلومات اضافيه</p>
             </section>
             <section>
               <figure className="flex-grow-1">
@@ -100,7 +98,7 @@ class ParkFullDetails extends Component {
               </figure>
             </section>
             <section className="bg-park-blue tc v-mid dt w-100">
-              <p className="white h2 f4 v-mid f4 ma0 dtc">Review</p>
+              <p className="white h2 f4 v-mid f4 ma0 dtc">رأي الزوار</p>
             </section>
             <article className="pa3">{park.parkDesc}</article>
           </div>
