@@ -3,9 +3,9 @@ import Navbar from './Navbar';
 import GreenTag from './GreenTag';
 import LikeIcon from '../assets/like.png';
 import PlaceIcon from '../assets/place.png';
-import RouteIcon from '../assets/route.png';
 import GlobeIcon from '../assets/grid-world.png';
 import CarIcon from '../assets/car.png';
+import '../css/style.css';
 
 class ParkFullDetails extends Component {
   constructor(props) {
@@ -18,7 +18,7 @@ class ParkFullDetails extends Component {
   }
 
   componentDidMount() {
-    fetch('http://localhost:6060/api/singlePark')
+    fetch(`/api/parks/${this.props.match.params.park_id}`)
       .then(res => res.json())
       .then(
         result => {
@@ -37,6 +37,7 @@ class ParkFullDetails extends Component {
   }
 
   gettingFullDetails = () => {
+    debugger;
     const { error, isLoaded, park } = this.state;
     if (error) {
       return <div>Error: {error.message}</div>;
@@ -53,15 +54,18 @@ class ParkFullDetails extends Component {
             <img
               src={park.picturesUrl.big}
               className="db fr w-75 max-height-45"
+              alt="big park"
             />
             <div className="h-100 max-height-45">
               <img
                 src={park.picturesUrl.small[0]}
                 className="db w-25 h-50 fl-ns"
+                alt="small park"
               />
               <img
                 src={park.picturesUrl.small[1]}
                 className="db w-25 h-50 fl-ns"
+                alt="small park"
               />
             </div>
           </section>
@@ -71,10 +75,18 @@ class ParkFullDetails extends Component {
                 <img src={LikeIcon} alt="" />
               </figure>
               <figure className="flex-grow-1">
-                <img src={CarIcon} alt="" />
+                <a
+                  href={`waze://?ll=${park.parkCoordinates.lat},${
+                    park.parkCoordinates.lang
+                  }&navigate=yes`}
+                >
+                  <img src={CarIcon} alt="" />
+                </a>
               </figure>
               <figure className="flex-grow-2">
-                <img src={PlaceIcon} alt="" />
+                <a href="/map">
+                  <img src={PlaceIcon} alt="" />
+                </a>
               </figure>
             </section>
             <section className="bg-park-blue tc v-mid dt w-100">
@@ -85,7 +97,7 @@ class ParkFullDetails extends Component {
             <section>
               <figure className="flex-grow-1">
                 <img src={GlobeIcon} className="h1 w1 mr2" alt="" />
-                <a href="#">www.fake-web-site.co.il</a>
+                <a href="">www.fake-web-site.co.il</a>
               </figure>
             </section>
             <section className="bg-park-blue tc v-mid dt w-100">

@@ -1,7 +1,5 @@
 import React from 'react';
-import { compose, withProps, withStateHandlers } from 'recompose';
 import {
-  withScriptjs,
   withGoogleMap,
   GoogleMap,
   Marker,
@@ -100,7 +98,7 @@ const MapComponent = withGoogleMap(props => (
         onClick={() => props.handleMarkerClick(park.parkId)}
       >
         {park.isMarkerShown && (
-          <InfoWindow onCloseClick={() => props.handleMarkerClick(park.parkId)}>
+          <InfoWindow  onCloseClick={() => props.handleMarkerClick(park.parkId)}>
             <div>
               <h1>{park.parkName}</h1>
               <h3>{park.parkDesc}</h3>

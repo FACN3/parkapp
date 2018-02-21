@@ -3,7 +3,7 @@ import React from 'react';
 class Navbar extends React.Component {
   constructor(props) {
     super(props);
-
+    debugger;
     this.state = {
       isFilterToggled: false,
       isShowByToggled: false
@@ -23,15 +23,6 @@ class Navbar extends React.Component {
       ? this.setState({ isShowByToggled: false })
       : this.setState({ isShowByToggled: true });
   };
-
-  // handleSubmit(e) {
-  //   e.preventDefault();
-  //   const query = e.target.searchInput.value;
-  //   // console.log(query);
-  //   fetch(`http://localhost:6060/api/parks/city/${query}`).then(res =>
-  //     res.json(res)
-  //   );
-  // }
 
   render() {
     return (
@@ -65,7 +56,7 @@ class Navbar extends React.Component {
         <nav
           className={
             this.props.location === '/map' ||
-            this.props.location === '/parkFullDetails'
+            this.props.location.includes('parkFullDetails')
               ? 'dn'
               : 'navbar2 h2 flex justify-between w-100 bg-park-blue changa f4 h3-ns f2-ns'
           }
@@ -171,7 +162,7 @@ class Navbar extends React.Component {
 
         <nav
           className={
-            this.props.location === '/parkFullDetails'
+            this.props.location.includes('parkFullDetails')
               ? 'navbar3 h2 w-100 bg-park-blue bt bb b--white changa h3-ns z-1'
               : 'dn'
           }
