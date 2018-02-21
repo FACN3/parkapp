@@ -83,7 +83,7 @@ class Navbar extends React.Component {
                 className="black no-underline mt1 pa1 ba b--black-20 pl3 bg-white"
                 onClick={event => {
                   event.preventDefault();
-                  this.props.filterByTag('waterfall');
+                  this.props.filterByTag('شلالات');
                 }}
               >
                 شلالات
@@ -93,7 +93,7 @@ class Navbar extends React.Component {
                 className="black no-underline pa1 bl br bb b--black-20 pl3 bg-white"
                 onClick={event => {
                   event.preventDefault();
-                  this.props.filterByTag('BBQ');
+                  this.props.filterByTag('مكان للشواء');
                 }}
               >
                 مكان للشواء
@@ -103,7 +103,7 @@ class Navbar extends React.Component {
                 className="black no-underline pa1 bl br bb b--black-20 pl3 bg-white"
                 onClick={event => {
                   event.preventDefault();
-                  this.props.filterByTag('campsite');
+                  this.props.filterByTag(' مكان للتخييم');
                 }}
               >
                 مكان للتخييم
@@ -113,7 +113,7 @@ class Navbar extends React.Component {
                 className="black no-underline pa1 bl br bb b--black-20 pl3 bg-white"
                 onClick={event => {
                   event.preventDefault();
-                  this.props.filterByTag('playground');
+                  this.props.filterByTag('مكان للعب الاطفال');
                 }}
               >
                 مكان للعب الاطفال
@@ -123,7 +123,7 @@ class Navbar extends React.Component {
                 className="black no-underline pa1 bl br bb b--black-20 pl3 bg-white"
                 onClick={event => {
                   event.preventDefault();
-                  this.props.filterByTag('free entrance');
+                  this.props.filterByTag('دخول مجاني');
                 }}
               >
                 دخول مجاني
@@ -133,7 +133,7 @@ class Navbar extends React.Component {
                 className="black no-underline pa1 bl br bb b--black-20 pl3 bg-white"
                 onClick={event => {
                   event.preventDefault();
-                  this.props.filterByTag('bike trail');
+                  this.props.filterByTag('ممر للدراجات');
                 }}
               >
                 ممر للدراجات
@@ -143,7 +143,7 @@ class Navbar extends React.Component {
                 className="black no-underline pa1 bl br bb b--black-20 pl3 bg-white"
                 onClick={event => {
                   event.preventDefault();
-                  this.props.filterByTag('elderly-friendly');
+                  this.props.filterByTag('ملائم لكبار السن');
                 }}
               >
                 ملائم لكبار السن

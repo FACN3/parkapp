@@ -60,6 +60,7 @@ export class MapComponent extends Component {
             lat: 32.6991,
             lng: 35.3035
           }}
+          zoom={8}
         >
           {this.state.MarkersWithData.map(marker => (
             <Marker
@@ -68,6 +69,7 @@ export class MapComponent extends Component {
               position={marker.parkCoordinates}
               name={marker.parkName}
               pic={marker.picturesUrl.small[0]}
+              parkId={marker._id}
             />
           ))}
 
@@ -76,7 +78,9 @@ export class MapComponent extends Component {
             visible={this.state.showingInfoWindow}
           >
             <div className="w4">
-              <h1>{this.state.selectedPlace.name}</h1>
+              <a href={'parkFullDetails/' + this.state.selectedPlace.parkId}>
+                <h1>{this.state.selectedPlace.name}</h1>
+              </a>
               <img
                 src={this.state.selectedPlace.pic}
                 alt=""
