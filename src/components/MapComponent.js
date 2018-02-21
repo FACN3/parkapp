@@ -14,7 +14,7 @@ export class MapComponent extends Component {
   }
 
   componentDidMount() {
-    return fetch('/api/allparks')
+    return fetch('/api/parks')
       .then(results => {
         return results.json();
       })
@@ -63,10 +63,11 @@ export class MapComponent extends Component {
         >
           {this.state.MarkersWithData.map(marker => (
             <Marker
+              key={marker._id}
               onClick={this.onMarkerClick}
               position={marker.parkCoordinates}
               name={marker.parkName}
-              pic={marker.picturesUrl.small}
+              pic={marker.picturesUrl.small[0]}
             />
           ))}
 
@@ -74,11 +75,13 @@ export class MapComponent extends Component {
             marker={this.state.activeMarker}
             visible={this.state.showingInfoWindow}
           >
-            <div>
-              <h1>
-                {this.state.selectedPlace.name}
-                <img src={this.state.selectedPlace.pic} alt="" />
-              </h1>
+            <div className="w4">
+              <h1>{this.state.selectedPlace.name}</h1>
+              <img
+                src={this.state.selectedPlace.pic}
+                alt=""
+                className="w-90 h-90"
+              />
             </div>
           </InfoWindow>
         </Map>

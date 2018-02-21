@@ -5,7 +5,7 @@ const Schema = mongoose.Schema;
 const ParkSchema = new Schema({
   parkName: String,
   parkDesc: String,
-  parkCoordinates: { lat: Number, lang: Number },
+  parkCoordinates: { lat: Number, lng: Number },
   rating: Number,
   views: Number,
   city: String,
