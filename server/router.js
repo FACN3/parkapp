@@ -107,7 +107,7 @@ const routes = (app, Park) => {
         },
         rating: 1,
         wazeLink: 'fake Waze link',
-        tags: ['tag1', 'tag2', 'tag3'],
+        tags: ['waterfall', 'BBQ', 'tag3'],
         picturesUrl: { small: ['fakeUrl', 'fakeUrl'], big: 'fakeUrl' },
         views: 5
       },
@@ -118,7 +118,7 @@ const routes = (app, Park) => {
         parkCoordinates: { lat: 32.794044, lng: 34.989571 },
         rating: 2,
         wazeLink: 'fake Waze link',
-        tags: ['tag1', 'tag2', 'tag3'],
+        tags: ['tag1', 'campsite', 'tag3'],
         picturesUrl: { small: ['fakeUrl', 'fakeUrl'], big: 'fakeUrl' },
         views: 4
       },
@@ -129,7 +129,7 @@ const routes = (app, Park) => {
         parkCoordinates: { lat: 32.109333, lng: 34.855499 },
         rating: 3,
         wazeLink: 'fake Waze link',
-        tags: ['tag1', 'tag2', 'tag3'],
+        tags: ['bike trail', 'tag2', 'tag3'],
         picturesUrl: { small: ['fakeUrl', 'fakeUrl'], big: 'fakeUrl' },
         views: 3
       },
@@ -140,7 +140,7 @@ const routes = (app, Park) => {
         parkCoordinates: { lat: 32.9331, lng: 35.0827 },
         rating: 4,
         wazeLink: 'fake Waze link',
-        tags: ['tag1', 'tag2', 'tag3'],
+        tags: ['elderly-friendly', 'free entrance', 'tag3'],
         picturesUrl: { small: ['fakeUrl', 'fakeUrl'], big: 'fakeUrl' },
         views: 2
       },
@@ -151,7 +151,7 @@ const routes = (app, Park) => {
         parkCoordinates: { lat: 31.7683, lng: 35.2137 },
         rating: 5,
         wazeLink: 'fake Waze link',
-        tags: ['tag1', 'tag2', 'tag3'],
+        tags: ['tag1', 'playground', 'tag3'],
         picturesUrl: { small: ['fakeUrl', 'fakeUrl'], big: 'fakeUrl' },
         views: 1
       }
